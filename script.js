@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initSignupForm();
   initFooterYear();
-  initPricingTilt();
-  initCartButtons();
+  initCartSystem();
+  initCheckout();
   initChatWidget();
 });
 
@@ -424,33 +424,381 @@ function initPricingTilt() {
 }
 
 
-/* ─── 10. CART BUTTONS (DEMO) ──────────────────
-   Provides visual feedback for "Add to Cart"
-   clicks. In a real implementation these would
-   update a cart state/store.
+/* ─── 10. CART SYSTEM ──────────────────────────
+   Full shopping cart: add/remove/qty, sidebar,
+   persisted in localStorage.
    ─────────────────────────────────────────── */
-function initCartButtons() {
-  document.querySelectorAll('.product-card__add').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const originalText = btn.textContent;
-      btn.textContent = '✓ Added!';
-      btn.style.background = 'var(--color-accent)';
-      btn.style.borderColor = 'var(--color-accent)';
-      btn.disabled = true;
+function initCartSystem() {
+  // ── State ──────────────────────────────────
+  let cart = loadCart();
 
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.style.borderColor = '';
-        btn.disabled = false;
-      }, 2000);
+  // ── Elements ───────────────────────────────
+  const cartBtn      = document.getElementById('cart-btn');
+  const cartClose    = document.getElementById('cart-close');
+  const cartOverlay  = document.getElementById('cart-overlay');
+  const cartSidebar  = document.getElementById('cart-sidebar');
+  const cartItemsEl  = document.getElementById('cart-items');
+  const cartCount    = document.getElementById('cart-count');
+  const cartSubtotal = document.getElementById('cart-subtotal');
+  const checkoutBtn  = document.getElementById('checkout-btn');
+  const cartShopLink = document.getElementById('cart-shop-link');
+
+  if (!cartBtn || !cartSidebar) return;
+
+  // ── Persistence ────────────────────────────
+  function loadCart() {
+    try { return JSON.parse(localStorage.getItem('ansurogya-cart') || '[]'); }
+    catch { return []; }
+  }
+  function saveCart() {
+    localStorage.setItem('ansurogya-cart', JSON.stringify(cart));
+  }
+
+  // ── Cart calculations ──────────────────────
+  function totalItems() { return cart.reduce((s, i) => s + i.qty, 0); }
+  function subtotal()   { return cart.reduce((s, i) => s + i.price * i.qty, 0); }
+
+  // ── Render sidebar ─────────────────────────
+  function renderCart() {
+    const count = totalItems();
+    const sub   = subtotal();
+
+    // Badge
+    cartCount.textContent = count;
+    cartCount.classList.toggle('bump', false);
+    void cartCount.offsetWidth; // reflow
+    if (count > 0) cartCount.classList.add('bump');
+
+    // Empty / filled state
+    cartSidebar.classList.toggle('cart-sidebar--empty', count === 0);
+
+    // Items
+    cartItemsEl.innerHTML = '';
+    cart.forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'cart-item';
+      el.setAttribute('role', 'listitem');
+      el.innerHTML = `
+        <img class="cart-item__img" src="${item.img}" alt="${item.name}" />
+        <div class="cart-item__info">
+          <p class="cart-item__name">${item.name}</p>
+          <p class="cart-item__price">GH₵ ${item.price} each</p>
+        </div>
+        <div class="cart-item__controls">
+          <button class="cart-item__qty-btn" data-action="dec" data-id="${item.id}" aria-label="Decrease quantity">−</button>
+          <span class="cart-item__qty">${item.qty}</span>
+          <button class="cart-item__qty-btn" data-action="inc" data-id="${item.id}" aria-label="Increase quantity">+</button>
+          <button class="cart-item__remove" data-action="remove" data-id="${item.id}" aria-label="Remove ${item.name}">✕</button>
+        </div>`;
+      cartItemsEl.appendChild(el);
+    });
+
+    // Subtotal
+    cartSubtotal.textContent = `GH₵ ${sub.toLocaleString()}`;
+
+    saveCart();
+
+    // Notify checkout if open
+    document.dispatchEvent(new CustomEvent('cart-updated'));
+  }
+
+  // ── Add to cart ────────────────────────────
+  function addItem(id, name, price, img) {
+    const existing = cart.find(i => i.id === id);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({ id, name, price: Number(price), img, qty: 1 });
+    }
+    renderCart();
+  }
+
+  // ── Qty / remove controls ──────────────────
+  cartItemsEl.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    const { action, id } = btn.dataset;
+    const idx = cart.findIndex(i => i.id === id);
+    if (idx === -1) return;
+
+    if (action === 'inc') {
+      cart[idx].qty++;
+    } else if (action === 'dec') {
+      if (cart[idx].qty > 1) { cart[idx].qty--; }
+      else { cart.splice(idx, 1); }
+    } else if (action === 'remove') {
+      cart.splice(idx, 1);
+    }
+    renderCart();
+  });
+
+  // ── Open / close sidebar ───────────────────
+  function openCart() {
+    cartSidebar.hidden = false;
+    requestAnimationFrame(() => {
+      cartSidebar.classList.add('cart-sidebar--open');
+      cartOverlay.classList.add('cart-overlay--visible');
+    });
+    cartBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCart() {
+    cartSidebar.classList.remove('cart-sidebar--open');
+    cartOverlay.classList.remove('cart-overlay--visible');
+    cartBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    setTimeout(() => { cartSidebar.hidden = true; }, 320);
+  }
+
+  cartBtn.addEventListener('click', openCart);
+  cartClose.addEventListener('click', closeCart);
+  cartOverlay.addEventListener('click', closeCart);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+  if (cartShopLink) cartShopLink.addEventListener('click', closeCart);
+
+  // ── Wire "Add to Cart" buttons ─────────────
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.add-to-cart');
+    if (!btn) return;
+    e.preventDefault();
+    const { id, name, price, img } = btn.dataset;
+    addItem(id, name, price, img);
+
+    // Button feedback
+    const orig = btn.textContent;
+    btn.textContent = '✓ Added!';
+    btn.style.background = 'var(--color-accent)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 1800);
+  });
+
+  // ── Checkout button ────────────────────────
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+      closeCart();
+      setTimeout(() => document.dispatchEvent(new CustomEvent('open-checkout')), 340);
+    });
+  }
+
+  // ── Expose cart to checkout ────────────────
+  window._ansurCart = { getCart: () => cart, subtotal, totalItems };
+
+  // ── Initial render ─────────────────────────
+  renderCart();
+}
+
+
+/* ─── 11. CHECKOUT ─────────────────────────────
+   Handles the checkout modal: order summary,
+   delivery/collection toggle, Prime free delivery,
+   MoMo or pay-at-collection, order confirmation.
+   ─────────────────────────────────────────── */
+function initCheckout() {
+  const modal        = document.getElementById('checkout-modal');
+  const closeBtn     = document.getElementById('checkout-close');
+  const form         = document.getElementById('checkout-form');
+  const step1        = document.getElementById('checkout-step-1');
+  const step2        = document.getElementById('checkout-step-2');
+  const summaryEl    = document.getElementById('checkout-summary');
+  const totalEl      = document.getElementById('checkout-total-amount');
+  const refEl        = document.getElementById('checkout-ref');
+  const instrEl      = document.getElementById('checkout-instructions');
+  const doneBtn      = document.getElementById('checkout-done');
+  const feeLabel     = document.getElementById('delivery-fee-label');
+  const deliveryWrap = document.getElementById('delivery-address-wrap');
+  const primeCheck   = document.getElementById('co-prime');
+  const deliveryRadio = document.getElementById('co-delivery');
+  const collectionRadio = document.getElementById('co-collection');
+  const payCollectionLabel = document.getElementById('label-pay-collection');
+
+  const DELIVERY_FEE = 20;
+
+  if (!modal || !form) return;
+
+  // ── Open / close ───────────────────────────
+  function openModal() {
+    renderSummary();
+    modal.hidden = false;
+    requestAnimationFrame(() => modal.classList.add('checkout-modal--open'));
+    document.body.style.overflow = 'hidden';
+    step1.hidden = false;
+    step2.hidden = true;
+  }
+  function closeModal() {
+    modal.classList.remove('checkout-modal--open');
+    document.body.style.overflow = '';
+    setTimeout(() => { modal.hidden = true; }, 250);
+  }
+
+  document.addEventListener('open-checkout', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+  // ── Render order summary ───────────────────
+  function renderSummary() {
+    if (!window._ansurCart) return;
+    const cart = window._ansurCart.getCart();
+    summaryEl.innerHTML = cart.map(i =>
+      `<div class="checkout-summary-item">
+        <span>${i.name} × ${i.qty}</span>
+        <span>GH₵ ${(i.price * i.qty).toLocaleString()}</span>
+       </div>`
+    ).join('') || '<p style="font-size:0.85rem;color:#888">No items</p>';
+    updateTotal();
+  }
+
+  // ── Update total ───────────────────────────
+  function updateTotal() {
+    if (!window._ansurCart) return;
+    const sub       = window._ansurCart.subtotal();
+    const isDelivery = deliveryRadio.checked;
+    const isPrime    = primeCheck.checked;
+    const fee        = isDelivery && !isPrime ? DELIVERY_FEE : 0;
+    const total      = sub + fee;
+    totalEl.textContent = `GH₵ ${total.toLocaleString()}`;
+
+    if (feeLabel) {
+      feeLabel.textContent = isPrime
+        ? '★ Free delivery (Prime Member)'
+        : `GH₵ ${DELIVERY_FEE} delivery fee`;
+    }
+  }
+
+  // ── Show/hide delivery address & pay-at-collection ──
+  function updateFulfilment() {
+    const isDelivery = deliveryRadio.checked;
+    deliveryWrap.style.display = isDelivery ? '' : 'none';
+    // Pay at collection only available for Click & Collect
+    if (payCollectionLabel) {
+      payCollectionLabel.style.display = isDelivery ? 'none' : '';
+    }
+    updateTotal();
+  }
+
+  primeCheck.addEventListener('change', updateTotal);
+  deliveryRadio.addEventListener('change', updateFulfilment);
+  collectionRadio.addEventListener('change', updateFulfilment);
+  updateFulfilment();
+
+  document.addEventListener('cart-updated', () => {
+    if (!modal.hidden) renderSummary();
+  });
+
+  // ── Form submission ────────────────────────
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const name       = document.getElementById('co-name').value.trim();
+    const phone      = document.getElementById('co-phone').value.trim();
+    const isPrime    = primeCheck.checked;
+    const isDelivery = deliveryRadio.checked;
+    const isMomo     = document.getElementById('co-momo').checked;
+    const sub        = window._ansurCart ? window._ansurCart.subtotal() : 0;
+    const fee        = isDelivery && !isPrime ? DELIVERY_FEE : 0;
+    const total      = sub + fee;
+    const ref        = 'ANS-' + Date.now().toString(36).toUpperCase();
+
+    // Build confirmation message
+    refEl.textContent = `Order ref: ${ref}`;
+
+    if (isMomo) {
+      instrEl.innerHTML = `
+        <strong>Please send GH₵ ${total.toLocaleString()} via MTN MoMo:</strong><br>
+        📱 Number: <strong>0552 681 380</strong><br>
+        📝 Reference: <strong>${ref}</strong><br><br>
+        ${isDelivery
+          ? `🚚 We will call <strong>${phone}</strong> to confirm your delivery address and dispatch your order once payment is received.`
+          : `🏪 Your order will be ready for collection at our Kumasi store. We will call <strong>${phone}</strong> when it's ready.`
+        }<br><br>
+        Thank you, <strong>${name}</strong>! We appreciate your business.`;
+    } else {
+      instrEl.innerHTML = `
+        <strong>Your order is confirmed for collection.</strong><br><br>
+        🏪 Visit our store near <strong>Central Command, Kumasi</strong>.<br>
+        💳 Pay <strong>GH₵ ${total.toLocaleString()}</strong> by cash or MoMo on arrival.<br>
+        📝 Show this reference: <strong>${ref}</strong><br><br>
+        We will call <strong>${phone}</strong> when your order is ready.<br>
+        Thank you, <strong>${name}</strong>!`;
+    }
+
+    // Clear cart
+    if (window._ansurCart) {
+      localStorage.removeItem('ansurogya-cart');
+      window._ansurCart.getCart().length = 0;
+      document.dispatchEvent(new CustomEvent('cart-updated'));
+    }
+
+    step1.hidden = true;
+    step2.hidden = false;
+  });
+
+  if (doneBtn) {
+    doneBtn.addEventListener('click', () => {
+      closeModal();
+      form.reset();
+      step1.hidden = false;
+      step2.hidden = true;
+      updateFulfilment();
+    });
+  }
+
+  // ── Validation ─────────────────────────────
+  function validate() {
+    let ok = true;
+    const nameInput  = document.getElementById('co-name');
+    const phoneInput = document.getElementById('co-phone');
+    const addrInput  = document.getElementById('co-address');
+
+    clearError('co-name-error');
+    clearError('co-phone-error');
+    clearError('co-address-error');
+
+    if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+      showError('co-name-error', 'Please enter your name.');
+      nameInput.classList.add('error');
+      ok = false;
+    }
+    if (!/^0\d{9}$/.test(phoneInput.value.trim())) {
+      showError('co-phone-error', 'Enter a valid Ghana phone number (e.g. 0241234567).');
+      phoneInput.classList.add('error');
+      ok = false;
+    }
+    if (deliveryRadio.checked && !addrInput.value.trim()) {
+      showError('co-address-error', 'Please enter your delivery address.');
+      addrInput.classList.add('error');
+      ok = false;
+    }
+    return ok;
+  }
+
+  function showError(id, msg) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = msg;
+  }
+  function clearError(id) {
+    const el = document.getElementById(id);
+    if (el) { el.textContent = ''; }
+    const input = el && el.previousElementSibling;
+    if (input) input.classList.remove('error');
+  }
+
+  // Clear errors on input
+  ['co-name','co-phone','co-address'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => {
+      el.classList.remove('error');
     });
   });
 }
 
 
-/* ─── 11. AI CHAT WIDGET ───────────────────────
+/* ─── 13. AI CHAT WIDGET ───────────────────────
    Floating chat assistant with keyword-based
    responses about the store, products, hours,
    MoMo payment, laptops, and contact info.

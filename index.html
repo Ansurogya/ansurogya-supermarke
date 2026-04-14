@@ -54,6 +54,15 @@
         <li><a class="navbar__link navbar__link--cta" href="#momo">Pay with MoMo</a></li>
       </ul>
 
+      <!-- Cart button -->
+      <button class="navbar__cart" id="cart-btn" aria-label="Open shopping cart" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="navbar__cart-count" id="cart-count" aria-live="polite" aria-label="items in cart">0</span>
+      </button>
+
     </nav>
   </header>
 
@@ -99,40 +108,37 @@
 
         <article class="featured-strip__card animate-on-scroll" style="--delay:0ms">
           <div class="featured-strip__img-wrap">
-            <img src="Webphotos/Peacock_Rice.webp"
-                 alt="Peacock Fragrant Rice"
-                 loading="lazy" />
+            <img src="Webphotos/Peacock_Rice.webp" alt="Peacock Fragrant Rice" loading="lazy" />
           </div>
           <div class="featured-strip__info">
             <h3 class="featured-strip__name">Peacock Fragrant Rice</h3>
             <p class="featured-strip__desc">Premium long-grain jasmine rice — a Ghanaian kitchen staple</p>
-            <a class="btn btn--outline btn--sm" href="#groceries">View Product</a>
+            <p class="featured-strip__price">GH₵ 120</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="peacock-rice" data-name="Peacock Fragrant Rice" data-price="120" data-img="Webphotos/Peacock_Rice.webp">Add to Cart</button>
           </div>
         </article>
 
         <article class="featured-strip__card animate-on-scroll" style="--delay:120ms">
           <div class="featured-strip__img-wrap">
-            <img src="Webphotos/JackDaniel_Coke.avif"
-                 alt="Jack Daniel's & Coke"
-                 loading="lazy" />
+            <img src="Webphotos/JackDaniel_Coke.avif" alt="Jack Daniel's & Coke" loading="lazy" />
           </div>
           <div class="featured-strip__info">
             <h3 class="featured-strip__name">Jack Daniel's &amp; Coke</h3>
             <p class="featured-strip__desc">The iconic ready-to-drink cocktail — imported and ice-cold ready</p>
-            <a class="btn btn--outline btn--sm" href="#products">View Product</a>
+            <p class="featured-strip__price">GH₵ 85</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="jack-daniels-coke" data-name="Jack Daniel's &amp; Coke" data-price="85" data-img="Webphotos/JackDaniel_Coke.avif">Add to Cart</button>
           </div>
         </article>
 
         <article class="featured-strip__card animate-on-scroll" style="--delay:240ms">
           <div class="featured-strip__img-wrap">
-            <img src="Webphotos/Baileys.webp"
-                 alt="Baileys Irish Cream"
-                 loading="lazy" />
+            <img src="Webphotos/Baileys.webp" alt="Baileys Irish Cream" loading="lazy" />
           </div>
           <div class="featured-strip__info">
             <h3 class="featured-strip__name">Baileys Irish Cream</h3>
             <p class="featured-strip__desc">Rich, smooth Irish cream liqueur — perfect for any occasion</p>
-            <a class="btn btn--outline btn--sm" href="#products">View Product</a>
+            <p class="featured-strip__price">GH₵ 180</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="baileys" data-name="Baileys Irish Cream" data-price="180" data-img="Webphotos/Baileys.webp">Add to Cart</button>
           </div>
         </article>
 
@@ -465,133 +471,133 @@
       <div class="groceries-grid" role="list">
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:0ms">
-          <a class="grocery-item__link" href="#" aria-label="Milo Chocolate Drink">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Milo.jpeg" alt="Milo chocolate drink tin" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Milo Chocolate Drink</h3>
-              <p class="grocery-item__origin">Nestlé</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Milo.jpeg" alt="Milo chocolate drink tin" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Milo Chocolate Drink</h3>
+            <p class="grocery-item__origin">Nestlé</p>
+            <p class="grocery-item__price">GH₵ 45</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="milo" data-name="Milo Chocolate Drink" data-price="45" data-img="Webphotos/Milo.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:60ms">
-          <a class="grocery-item__link" href="#" aria-label="Peak Evaporated Milk">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Peak.jpeg" alt="Peak evaporated milk tin" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Peak Evaporated Milk</h3>
-              <p class="grocery-item__origin">Nestlé</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Peak.jpeg" alt="Peak evaporated milk tin" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Peak Evaporated Milk</h3>
+            <p class="grocery-item__origin">Nestlé</p>
+            <p class="grocery-item__price">GH₵ 18</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="peak-milk" data-name="Peak Evaporated Milk" data-price="18" data-img="Webphotos/Peak.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:120ms">
-          <a class="grocery-item__link" href="#" aria-label="Milk">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Milk.jpeg" alt="Fresh milk" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--local">Local</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Fresh Milk</h3>
-              <p class="grocery-item__origin">Ghana</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Milk.jpeg" alt="Fresh milk" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--local">Local</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Fresh Milk</h3>
+            <p class="grocery-item__origin">Ghana</p>
+            <p class="grocery-item__price">GH₵ 15</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="fresh-milk" data-name="Fresh Milk" data-price="15" data-img="Webphotos/Milk.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:180ms">
-          <a class="grocery-item__link" href="#" aria-label="Heinz Baked Beans">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Heinz.jpeg" alt="Heinz baked beans tin" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Heinz Baked Beans</h3>
-              <p class="grocery-item__origin">United Kingdom</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Heinz.jpeg" alt="Heinz baked beans tin" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Heinz Baked Beans</h3>
+            <p class="grocery-item__origin">United Kingdom</p>
+            <p class="grocery-item__price">GH₵ 35</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="heinz" data-name="Heinz Baked Beans" data-price="35" data-img="Webphotos/Heinz.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:240ms">
-          <a class="grocery-item__link" href="#" aria-label="Salsa Tomatoes">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Salsa_tomatoes.jpeg" alt="Salsa tomatoes tin" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Salsa Tomatoes</h3>
-              <p class="grocery-item__origin">Italy</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Salsa_tomatoes.jpeg" alt="Salsa tomatoes tin" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Salsa Tomatoes</h3>
+            <p class="grocery-item__origin">Italy</p>
+            <p class="grocery-item__price">GH₵ 22</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="salsa-tomatoes" data-name="Salsa Tomatoes" data-price="22" data-img="Webphotos/Salsa_tomatoes.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:300ms">
-          <a class="grocery-item__link" href="#" aria-label="Sardines in Tomato Sauce">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Sardine.jpeg" alt="Sardines tin" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Sardines in Sauce</h3>
-              <p class="grocery-item__origin">Morocco</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Sardine.jpeg" alt="Sardines tin" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Sardines in Sauce</h3>
+            <p class="grocery-item__origin">Morocco</p>
+            <p class="grocery-item__price">GH₵ 28</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="sardines" data-name="Sardines in Sauce" data-price="28" data-img="Webphotos/Sardine.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:360ms">
-          <a class="grocery-item__link" href="#" aria-label="Canned Fish">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Can_Fish.jpeg" alt="Canned fish" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Canned Fish</h3>
-              <p class="grocery-item__origin">Imported</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Can_Fish.jpeg" alt="Canned fish" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Canned Fish</h3>
+            <p class="grocery-item__origin">Imported</p>
+            <p class="grocery-item__price">GH₵ 25</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="canned-fish" data-name="Canned Fish" data-price="25" data-img="Webphotos/Can_Fish.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:420ms">
-          <a class="grocery-item__link" href="#" aria-label="Sugar">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Sugar.jpeg" alt="Sugar bag" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--local">Local</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Sugar</h3>
-              <p class="grocery-item__origin">Ghana</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Sugar.jpeg" alt="Sugar bag" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--local">Local</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Sugar</h3>
+            <p class="grocery-item__origin">Ghana</p>
+            <p class="grocery-item__price">GH₵ 12</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="sugar" data-name="Sugar" data-price="12" data-img="Webphotos/Sugar.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:480ms">
-          <a class="grocery-item__link" href="#" aria-label="BF Spread">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/BF_Spread.jpeg" alt="BF spread jar" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">BF Spread</h3>
-              <p class="grocery-item__origin">Imported</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/BF_Spread.jpeg" alt="BF spread jar" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">BF Spread</h3>
+            <p class="grocery-item__origin">Imported</p>
+            <p class="grocery-item__price">GH₵ 38</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="bf-spread" data-name="BF Spread" data-price="38" data-img="Webphotos/BF_Spread.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
         <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:540ms">
-          <a class="grocery-item__link" href="#" aria-label="Lotus Biscuits">
-            <div class="grocery-item__image-wrap">
-              <img class="grocery-item__img" src="Webphotos/Lotus.jpeg" alt="Lotus biscuits pack" loading="lazy" />
-              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
-            </div>
-            <figcaption class="grocery-item__caption">
-              <h3 class="grocery-item__name">Lotus Biscuits</h3>
-              <p class="grocery-item__origin">Belgium</p>
-            </figcaption>
-          </a>
+          <div class="grocery-item__image-wrap">
+            <img class="grocery-item__img" src="Webphotos/Lotus.jpeg" alt="Lotus biscuits pack" loading="lazy" />
+            <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+          </div>
+          <figcaption class="grocery-item__caption">
+            <h3 class="grocery-item__name">Lotus Biscuits</h3>
+            <p class="grocery-item__origin">Belgium</p>
+            <p class="grocery-item__price">GH₵ 55</p>
+            <button class="btn btn--primary btn--sm btn--full add-to-cart" data-id="lotus" data-name="Lotus Biscuits" data-price="55" data-img="Webphotos/Lotus.jpeg">Add to Cart</button>
+          </figcaption>
         </figure>
 
       </div><!-- /groceries-grid -->
@@ -621,7 +627,8 @@
           <div class="trending-card__body">
             <h3 class="trending-card__name">Milo Chocolate Drink</h3>
             <p class="trending-card__trend">↑ 38% this week</p>
-            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+            <p class="trending-card__price">GH₵ 45</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="milo" data-name="Milo Chocolate Drink" data-price="45" data-img="Webphotos/Milo.jpeg">Add to Cart</button>
           </div>
         </article>
 
@@ -634,7 +641,8 @@
           <div class="trending-card__body">
             <h3 class="trending-card__name">Peacock Fragrant Rice</h3>
             <p class="trending-card__trend">↑ 24% this week</p>
-            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+            <p class="trending-card__price">GH₵ 120</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="peacock-rice" data-name="Peacock Fragrant Rice" data-price="120" data-img="Webphotos/Peacock_Rice.webp">Add to Cart</button>
           </div>
         </article>
 
@@ -647,7 +655,8 @@
           <div class="trending-card__body">
             <h3 class="trending-card__name">Baileys Irish Cream</h3>
             <p class="trending-card__trend">↑ 21% this week</p>
-            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+            <p class="trending-card__price">GH₵ 180</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="baileys" data-name="Baileys Irish Cream" data-price="180" data-img="Webphotos/Baileys.webp">Add to Cart</button>
           </div>
         </article>
 
@@ -660,7 +669,8 @@
           <div class="trending-card__body">
             <h3 class="trending-card__name">Jack Daniel's &amp; Coke</h3>
             <p class="trending-card__trend">↑ 19% this week</p>
-            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+            <p class="trending-card__price">GH₵ 85</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="jack-daniels-coke" data-name="Jack Daniel's &amp; Coke" data-price="85" data-img="Webphotos/JackDaniel_Coke.avif">Add to Cart</button>
           </div>
         </article>
 
@@ -673,7 +683,8 @@
           <div class="trending-card__body">
             <h3 class="trending-card__name">Heinz Baked Beans</h3>
             <p class="trending-card__trend">↑ 15% this week</p>
-            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+            <p class="trending-card__price">GH₵ 35</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="heinz" data-name="Heinz Baked Beans" data-price="35" data-img="Webphotos/Heinz.jpeg">Add to Cart</button>
           </div>
         </article>
 
@@ -686,7 +697,8 @@
           <div class="trending-card__body">
             <h3 class="trending-card__name">Biscoff Biscuits</h3>
             <p class="trending-card__trend">↑ 12% this week</p>
-            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+            <p class="trending-card__price">GH₵ 42</p>
+            <button class="btn btn--primary btn--sm add-to-cart" data-id="biscoff" data-name="Biscoff Biscuits" data-price="42" data-img="Webphotos/Biscoff.webp">Add to Cart</button>
           </div>
         </article>
 
@@ -957,7 +969,7 @@
               <h3 class="product-card__name">Roasted Groundnuts</h3>
               <p class="product-card__origin">Northern Region, Ghana</p>
               <p class="product-card__price">GH₵ 20.00</p>
-              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Roasted Groundnuts to cart">Add to Cart</button>
+              <button class="btn btn--sm btn--primary product-card__add add-to-cart" data-id="groundnuts" data-name="Roasted Groundnuts" data-price="20" data-img="https://images.unsplash.com/photo-1567892320791-7e2ad4f5dc94?w=500&q=80&auto=format&fit=crop" aria-label="Add Roasted Groundnuts to cart">Add to Cart</button>
             </div>
           </article>
 
@@ -973,7 +985,7 @@
               <h3 class="product-card__name">Fresh Yam</h3>
               <p class="product-card__origin">Brong-Ahafo, Ghana</p>
               <p class="product-card__price">GH₵ 35.00</p>
-              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Fresh Yam to cart">Add to Cart</button>
+              <button class="btn btn--sm btn--primary product-card__add add-to-cart" data-id="fresh-yam" data-name="Fresh Yam" data-price="35" data-img="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=500&q=80&auto=format&fit=crop" aria-label="Add Fresh Yam to cart">Add to Cart</button>
             </div>
           </article>
 
@@ -989,7 +1001,7 @@
               <h3 class="product-card__name">Yellow Plantain</h3>
               <p class="product-card__origin">Ashanti Region, Ghana</p>
               <p class="product-card__price">GH₵ 8.00</p>
-              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Yellow Plantain to cart">Add to Cart</button>
+              <button class="btn btn--sm btn--primary product-card__add add-to-cart" data-id="plantain" data-name="Yellow Plantain" data-price="8" data-img="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500&q=80&auto=format&fit=crop" aria-label="Add Yellow Plantain to cart">Add to Cart</button>
             </div>
           </article>
 
@@ -1005,7 +1017,7 @@
               <h3 class="product-card__name">Cold Pressed Oil (1L)</h3>
               <p class="product-card__origin">Western Region, Ghana</p>
               <p class="product-card__price">GH₵ 48.00</p>
-              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Cold Pressed Oil to cart">Add to Cart</button>
+              <button class="btn btn--sm btn--primary product-card__add add-to-cart" data-id="cold-pressed-oil" data-name="Cold Pressed Oil (1L)" data-price="48" data-img="Webphotos/Cold_Pressed_oil.webp" aria-label="Add Cold Pressed Oil to cart">Add to Cart</button>
             </div>
           </article>
 
@@ -1392,6 +1404,146 @@
       </div><!-- /signup__inner -->
     </div>
   </section>
+
+
+  <!-- ── CART SIDEBAR ─────────────────────────── -->
+  <div id="cart-overlay" class="cart-overlay" aria-hidden="true"></div>
+
+  <aside id="cart-sidebar" class="cart-sidebar" role="dialog" aria-modal="true" aria-labelledby="cart-sidebar-title" hidden>
+    <div class="cart-sidebar__header">
+      <h2 class="cart-sidebar__title" id="cart-sidebar-title">Your Basket</h2>
+      <button class="cart-sidebar__close" id="cart-close" aria-label="Close basket">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div id="cart-items" class="cart-sidebar__items" role="list" aria-live="polite">
+      <!-- populated by JS -->
+    </div>
+
+    <div class="cart-sidebar__empty" id="cart-empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <p>Your basket is empty</p>
+      <a class="btn btn--primary btn--sm" href="#groceries" id="cart-shop-link">Start Shopping</a>
+    </div>
+
+    <div class="cart-sidebar__footer" id="cart-footer">
+      <div class="cart-sidebar__subtotal">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">GH₵ 0</span>
+      </div>
+      <button class="btn btn--gold btn--full" id="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+
+  <!-- ── CHECKOUT MODAL ────────────────────────── -->
+  <div id="checkout-modal" class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" hidden>
+    <div class="checkout-modal__inner">
+
+      <button class="checkout-modal__close" id="checkout-close" aria-label="Close checkout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <!-- Step 1: Details -->
+      <div id="checkout-step-1" class="checkout-step">
+        <h2 class="checkout-modal__title" id="checkout-title">Checkout</h2>
+        <p class="checkout-modal__sub">Complete your order below</p>
+
+        <div class="checkout-order-summary" id="checkout-summary">
+          <!-- populated by JS -->
+        </div>
+
+        <form id="checkout-form" novalidate>
+
+          <div class="checkout-section-label">Your Details</div>
+          <div class="checkout-field">
+            <label for="co-name">Full Name</label>
+            <input id="co-name" type="text" placeholder="e.g. Kofi Mensah" autocomplete="name" required />
+            <span class="checkout-error" id="co-name-error"></span>
+          </div>
+          <div class="checkout-field">
+            <label for="co-phone">Phone Number</label>
+            <input id="co-phone" type="tel" placeholder="e.g. 0241234567" autocomplete="tel" required />
+            <span class="checkout-error" id="co-phone-error"></span>
+          </div>
+
+          <div class="checkout-section-label">Prime Membership</div>
+          <label class="checkout-prime-toggle">
+            <input type="checkbox" id="co-prime" />
+            <span class="checkout-prime-toggle__box"></span>
+            <span>I am an Ansurogya Prime Member <em>(free delivery)</em></span>
+          </label>
+
+          <div class="checkout-section-label">Fulfilment</div>
+          <div class="checkout-fulfilment" role="radiogroup" aria-label="Delivery or Collection">
+            <label class="checkout-radio" id="label-delivery">
+              <input type="radio" name="fulfilment" value="delivery" id="co-delivery" checked />
+              <span class="checkout-radio__box"></span>
+              <span class="checkout-radio__content">
+                <strong>Home Delivery</strong>
+                <span id="delivery-fee-label">GH₵ 20 delivery fee</span>
+              </span>
+            </label>
+            <label class="checkout-radio" id="label-collection">
+              <input type="radio" name="fulfilment" value="collection" id="co-collection" />
+              <span class="checkout-radio__box"></span>
+              <span class="checkout-radio__content">
+                <strong>Click &amp; Collect</strong>
+                <span>Free — pick up at our Kumasi store</span>
+              </span>
+            </label>
+          </div>
+
+          <div id="delivery-address-wrap" class="checkout-field">
+            <label for="co-address">Delivery Address</label>
+            <input id="co-address" type="text" placeholder="Street / area in Kumasi" />
+            <span class="checkout-error" id="co-address-error"></span>
+          </div>
+
+          <div class="checkout-section-label">Payment</div>
+          <div class="checkout-fulfilment" role="radiogroup" aria-label="Payment method">
+            <label class="checkout-radio">
+              <input type="radio" name="payment" value="momo" id="co-momo" checked />
+              <span class="checkout-radio__box"></span>
+              <span class="checkout-radio__content">
+                <strong>Pay via MoMo</strong>
+                <span>Send to 0552 681 380 before delivery</span>
+              </span>
+            </label>
+            <label class="checkout-radio" id="label-pay-collection">
+              <input type="radio" name="payment" value="collection" id="co-pay-collection" />
+              <span class="checkout-radio__box"></span>
+              <span class="checkout-radio__content">
+                <strong>Pay at Collection</strong>
+                <span>Cash or MoMo when you pick up</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="checkout-total-row">
+            <span>Order Total</span>
+            <span id="checkout-total-amount">GH₵ 0</span>
+          </div>
+
+          <button type="submit" class="btn btn--gold btn--full checkout-submit">Place Order</button>
+
+        </form>
+      </div>
+
+      <!-- Step 2: Confirmation -->
+      <div id="checkout-step-2" class="checkout-step" hidden>
+        <div class="checkout-success">
+          <div class="checkout-success__icon" aria-hidden="true">✓</div>
+          <h2 class="checkout-success__title">Order Placed!</h2>
+          <p class="checkout-success__ref" id="checkout-ref"></p>
+          <div class="checkout-success__instructions" id="checkout-instructions"></div>
+          <button class="btn btn--primary btn--full" id="checkout-done">Continue Shopping</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 
   <script src="script.js"></script>
