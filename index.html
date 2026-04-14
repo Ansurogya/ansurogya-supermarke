@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ansurogya Supermarket — Fresh local and imported groceries, click & collect, and MoMo payments in Kumasi, Ghana. Located near Central Command." />
+  <meta property="og:title" content="Ansurogya Supermarket — Kumasi, Ghana" />
+  <meta property="og:description" content="Premium local and imported groceries, click & collect, and seamless MoMo payments." />
+  <meta property="og:type" content="website" />
+  <title>Ansurogya Supermarket — Fresh Groceries in Kumasi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Main navigation">
+
+      <a class="navbar__logo" href="#hero" aria-label="Ansurogya Supermarket — back to top">
+        <img class="navbar__logo-img"
+             src="Webphotos/Ansurogya Supermarket logo design.png"
+             alt="Ansurogya Supermarket logo"
+             width="140" height="48" />
+      </a>
+
+      <button class="navbar__hamburger"
+              id="hamburger-btn"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="nav-menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="navbar__menu" id="nav-menu" role="list">
+        <li><a class="navbar__link" href="#shop">Shop</a></li>
+        <li><a class="navbar__link" href="#click-collect">Click &amp; Collect</a></li>
+        <li><a class="navbar__link" href="#pricing">Prime Members</a></li>
+        <li><a class="navbar__link" href="#groceries">Groceries</a></li>
+        <li><a class="navbar__link" href="#trending">Trending</a></li>
+        <li><a class="navbar__link" href="#products">Products</a></li>
+        <li><a class="navbar__link" href="#laptops">Laptops</a></li>
+        <li><a class="navbar__link" href="#contact">Contact</a></li>
+        <li><a class="navbar__link" href="#signup">Sign Up</a></li>
+        <li><a class="navbar__link navbar__link--cta" href="#momo">Pay with MoMo</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════
+       1. HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero" aria-label="Welcome to Ansurogya Supermarket">
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content container">
+      <p class="hero__eyebrow">Fresh · Local · Delivered</p>
+      <h1 class="hero__headline">Ghana's Freshest&nbsp;Groceries,<br>At Your&nbsp;Doorstep</h1>
+      <p class="hero__tagline">
+        Premium imported and local produce, effortless click &amp; collect,
+        and seamless MoMo payments — all in one place, right here in Kumasi.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary btn--lg" href="#shop">Shop Now</a>
+        <a class="btn btn--ghost btn--lg" href="#click-collect">How It Works</a>
+      </div>
+    </div>
+
+    <div class="hero__badge" aria-hidden="true">
+      <span class="hero__badge-num">2000+</span>
+      <span class="hero__badge-label">Products</span>
+    </div>
+
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FEATURED PRODUCTS STRIP
+  ═══════════════════════════════════════════ -->
+  <section class="featured-strip" aria-label="Featured products">
+    <div class="container">
+      <p class="featured-strip__label">Featured In Store</p>
+      <div class="featured-strip__grid">
+
+        <article class="featured-strip__card animate-on-scroll" style="--delay:0ms">
+          <div class="featured-strip__img-wrap">
+            <img src="Webphotos/Peacock_Rice.webp"
+                 alt="Peacock Fragrant Rice"
+                 loading="lazy" />
+          </div>
+          <div class="featured-strip__info">
+            <h3 class="featured-strip__name">Peacock Fragrant Rice</h3>
+            <p class="featured-strip__desc">Premium long-grain jasmine rice — a Ghanaian kitchen staple</p>
+            <a class="btn btn--outline btn--sm" href="#groceries">View Product</a>
+          </div>
+        </article>
+
+        <article class="featured-strip__card animate-on-scroll" style="--delay:120ms">
+          <div class="featured-strip__img-wrap">
+            <img src="Webphotos/JackDaniel_Coke.avif"
+                 alt="Jack Daniel's & Coke"
+                 loading="lazy" />
+          </div>
+          <div class="featured-strip__info">
+            <h3 class="featured-strip__name">Jack Daniel's &amp; Coke</h3>
+            <p class="featured-strip__desc">The iconic ready-to-drink cocktail — imported and ice-cold ready</p>
+            <a class="btn btn--outline btn--sm" href="#products">View Product</a>
+          </div>
+        </article>
+
+        <article class="featured-strip__card animate-on-scroll" style="--delay:240ms">
+          <div class="featured-strip__img-wrap">
+            <img src="Webphotos/Baileys.webp"
+                 alt="Baileys Irish Cream"
+                 loading="lazy" />
+          </div>
+          <div class="featured-strip__info">
+            <h3 class="featured-strip__name">Baileys Irish Cream</h3>
+            <p class="featured-strip__desc">Rich, smooth Irish cream liqueur — perfect for any occasion</p>
+            <a class="btn btn--outline btn--sm" href="#products">View Product</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       2. ONLINE SHOPPING — CATEGORY GRID
+  ═══════════════════════════════════════════ -->
+  <section class="shop" id="shop" aria-labelledby="shop-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title" id="shop-heading">Shop by Category</h2>
+        <p class="section-subtitle">Everything your household needs, beautifully organised for you</p>
+      </div>
+
+      <div class="category-grid" role="list">
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:0ms">
+          <a class="category-card__link" href="#" aria-label="Browse Bakery products">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80&auto=format&fit=crop"
+                   alt="Freshly baked bread and pastries"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Bakery</h3>
+              <span class="category-card__count">42 items</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:60ms">
+          <a class="category-card__link" href="#" aria-label="Browse Dairy & Eggs products">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=600&q=80&auto=format&fit=crop"
+                   alt="Fresh dairy products and eggs"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Dairy &amp; Eggs</h3>
+              <span class="category-card__count">38 items</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:120ms">
+          <a class="category-card__link" href="#" aria-label="Browse Fresh Produce">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80&auto=format&fit=crop"
+                   alt="Colourful fresh vegetables and fruits"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Fresh Produce</h3>
+              <span class="category-card__count">120 items</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:180ms">
+          <a class="category-card__link" href="#" aria-label="Browse Meat & Fish products">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=600&q=80&auto=format&fit=crop"
+                   alt="Fresh meat and fish selection"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Meat &amp; Fish</h3>
+              <span class="category-card__count">65 items</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:240ms">
+          <a class="category-card__link" href="#" aria-label="Browse Beverages">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&q=80&auto=format&fit=crop"
+                   alt="Selection of beverages and drinks"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Beverages</h3>
+              <span class="category-card__count">87 items</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:300ms">
+          <a class="category-card__link" href="#" aria-label="Browse Snacks">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=600&q=80&auto=format&fit=crop"
+                   alt="Assorted snacks and crisps"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Snacks</h3>
+              <span class="category-card__count">54 items</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:360ms">
+          <a class="category-card__link" href="#" aria-label="Browse Frozen Foods">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?w=600&q=80&auto=format&fit=crop"
+                   alt="Frozen food products"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Frozen Foods</h3>
+              <span class="category-card__count">33 items</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:420ms">
+          <a class="category-card__link" href="#" aria-label="Browse Household products">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop"
+                   alt="Household cleaning and care products"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Household</h3>
+              <span class="category-card__count">78 items</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="category-card animate-on-scroll" role="listitem" style="--delay:480ms">
+          <a class="category-card__link" href="#" aria-label="Browse Baby & Toddler products">
+            <div class="category-card__image-wrap">
+              <img class="category-card__img"
+                   src="https://images.unsplash.com/photo-1585435557343-3b092031a831?w=600&q=80&auto=format&fit=crop"
+                   alt="Baby and toddler food and essentials"
+                   loading="lazy" />
+            </div>
+            <div class="category-card__body">
+              <h3 class="category-card__title">Baby &amp; Toddler</h3>
+              <span class="category-card__count">29 items</span>
+            </div>
+          </a>
+        </article>
+
+      </div><!-- /category-grid -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       3. CLICK & COLLECT
+  ═══════════════════════════════════════════ -->
+  <section class="click-collect" id="click-collect" aria-labelledby="cc-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title" id="cc-heading">Click &amp; Collect</h2>
+        <p class="section-subtitle">Order online at your convenience, then collect in-store — no waiting, no fuss</p>
+      </div>
+
+      <ol class="steps" role="list" aria-label="How Click and Collect works — 3 steps">
+
+        <li class="step animate-on-scroll" style="--delay:0ms">
+          <div class="step__number" aria-hidden="true">
+            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span class="step__badge">1</span>
+          </div>
+          <h3 class="step__title">Browse</h3>
+          <p class="step__desc">Explore over 2,000 products across all categories from any device, anytime.</p>
+        </li>
+
+        <li class="step animate-on-scroll" style="--delay:120ms">
+          <div class="step__number" aria-hidden="true">
+            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span class="step__badge">2</span>
+          </div>
+          <h3 class="step__title">Order</h3>
+          <p class="step__desc">Add to cart, confirm your slot, and pay securely via MoMo or card — done in minutes.</p>
+        </li>
+
+        <li class="step animate-on-scroll" style="--delay:240ms">
+          <div class="step__number" aria-hidden="true">
+            <svg class="step__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="step__badge">3</span>
+          </div>
+          <h3 class="step__title">Pick Up</h3>
+          <p class="step__desc">Swing by our Kumasi store near Central Command — your order will be packed and ready.</p>
+        </li>
+
+      </ol>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       4. ANSUROGYA PRIME
+  ═══════════════════════════════════════════ -->
+  <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+
+      <!-- Top heading -->
+      <div class="section-header">
+        <h2 class="section-title" id="pricing-heading">Ansurogya Prime</h2>
+        <p class="section-subtitle">Ghana's smartest shopping membership — inspired by the best, built for Kumasi.</p>
+      </div>
+
+      <!-- Membership card + price panel -->
+      <div class="prime-hero animate-on-scroll">
+
+        <!-- Left: membership card visual -->
+        <div class="prime-card-visual" aria-hidden="true">
+          <div class="prime-card-visual__inner">
+            <div class="prime-card-visual__logo">
+              <img src="Webphotos/Ansurogya Supermarket logo design.png" alt="" />
+            </div>
+            <div class="prime-card-visual__tag">PRIME MEMBER</div>
+            <div class="prime-card-visual__name">Member Name</div>
+            <div class="prime-card-visual__chip"></div>
+            <div class="prime-card-visual__number">**** **** **** 0001</div>
+          </div>
+        </div>
+
+        <!-- Right: price + key perks -->
+        <div class="prime-hero__info">
+          <p class="prime-hero__label">Annual Membership</p>
+          <div class="prime-hero__price">
+            <span class="prime-hero__currency">GH₵</span>
+            <span class="prime-hero__amount">500</span>
+            <span class="prime-hero__period">/ year</span>
+          </div>
+          <p class="prime-hero__equiv">That's less than GH₵ 42 a month</p>
+          <ul class="prime-hero__perks" role="list">
+            <li>Free same-day delivery on every order</li>
+            <li>Early access to all imported products</li>
+            <li>Exclusive Prime pricing on 500+ items</li>
+            <li>Bulk-buy discounts unlocked</li>
+            <li>First to know about deals &amp; arrivals</li>
+          </ul>
+          <a class="btn btn--gold btn--lg" href="#signup">Join Ansurogya Prime</a>
+          <p class="prime-hero__terms">Cancel anytime. No hidden fees. MoMo payment accepted.</p>
+        </div>
+
+      </div>
+
+      <!-- Benefits grid -->
+      <div class="prime-grid" role="list">
+
+        <article class="prime-card animate-on-scroll" role="listitem" style="--delay:0ms">
+          <div class="prime-card__icon" aria-hidden="true">🚚</div>
+          <h3 class="prime-card__title">Free Delivery</h3>
+          <p class="prime-card__desc">Unlimited free same-day delivery on every order. No minimum spend, no delivery charges — ever.</p>
+          <span class="prime-card__tag">Like Amazon Prime</span>
+        </article>
+
+        <article class="prime-card animate-on-scroll" role="listitem" style="--delay:80ms">
+          <div class="prime-card__icon" aria-hidden="true">⭐</div>
+          <h3 class="prime-card__title">Prime Prices</h3>
+          <p class="prime-card__desc">Members-only prices on hundreds of imported and local products — automatically applied at checkout.</p>
+          <span class="prime-card__tag">Like Tesco Clubcard</span>
+        </article>
+
+        <article class="prime-card animate-on-scroll" role="listitem" style="--delay:160ms">
+          <div class="prime-card__icon" aria-hidden="true">✈️</div>
+          <h3 class="prime-card__title">Early Import Access</h3>
+          <p class="prime-card__desc">New imported stock? You're first. Prime members get 24-hour exclusive access before items go public.</p>
+          <span class="prime-card__tag">Prime Exclusive</span>
+        </article>
+
+        <article class="prime-card animate-on-scroll" role="listitem" style="--delay:240ms">
+          <div class="prime-card__icon" aria-hidden="true">📦</div>
+          <h3 class="prime-card__title">Bulk Discounts</h3>
+          <p class="prime-card__desc">Stock up and save. Prime unlocks tiered bulk pricing — the more you buy, the more you save.</p>
+          <span class="prime-card__tag">Like Costco</span>
+        </article>
+
+        <article class="prime-card animate-on-scroll" role="listitem" style="--delay:320ms">
+          <div class="prime-card__icon" aria-hidden="true">🔔</div>
+          <h3 class="prime-card__title">First to Know</h3>
+          <p class="prime-card__desc">Instant alerts for flash sales, new arrivals, and seasonal deals — straight to your phone before anyone else.</p>
+          <span class="prime-card__tag">Prime Alerts</span>
+        </article>
+
+        <article class="prime-card animate-on-scroll" role="listitem" style="--delay:400ms">
+          <div class="prime-card__icon" aria-hidden="true">🎁</div>
+          <h3 class="prime-card__title">Rewards &amp; Vouchers</h3>
+          <p class="prime-card__desc">Earn points on every purchase. Redeem for vouchers, free products, and partner rewards — your loyalty pays back.</p>
+          <span class="prime-card__tag">Like Tesco Clubcard</span>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       5. GROCERIES — FRESH ARRIVALS
+  ═══════════════════════════════════════════ -->
+  <section class="groceries" id="groceries" aria-labelledby="groceries-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title" id="groceries-heading">Fresh Arrivals</h2>
+        <p class="section-subtitle">Handpicked quality, restocked every morning — straight from farm to shelf</p>
+      </div>
+
+      <div class="groceries-grid" role="list">
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:0ms">
+          <a class="grocery-item__link" href="#" aria-label="Milo Chocolate Drink">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Milo.jpeg" alt="Milo chocolate drink tin" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Milo Chocolate Drink</h3>
+              <p class="grocery-item__origin">Nestlé</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:60ms">
+          <a class="grocery-item__link" href="#" aria-label="Peak Evaporated Milk">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Peak.jpeg" alt="Peak evaporated milk tin" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Peak Evaporated Milk</h3>
+              <p class="grocery-item__origin">Nestlé</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:120ms">
+          <a class="grocery-item__link" href="#" aria-label="Milk">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Milk.jpeg" alt="Fresh milk" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--local">Local</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Fresh Milk</h3>
+              <p class="grocery-item__origin">Ghana</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:180ms">
+          <a class="grocery-item__link" href="#" aria-label="Heinz Baked Beans">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Heinz.jpeg" alt="Heinz baked beans tin" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Heinz Baked Beans</h3>
+              <p class="grocery-item__origin">United Kingdom</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:240ms">
+          <a class="grocery-item__link" href="#" aria-label="Salsa Tomatoes">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Salsa_tomatoes.jpeg" alt="Salsa tomatoes tin" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Salsa Tomatoes</h3>
+              <p class="grocery-item__origin">Italy</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:300ms">
+          <a class="grocery-item__link" href="#" aria-label="Sardines in Tomato Sauce">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Sardine.jpeg" alt="Sardines tin" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Sardines in Sauce</h3>
+              <p class="grocery-item__origin">Morocco</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:360ms">
+          <a class="grocery-item__link" href="#" aria-label="Canned Fish">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Can_Fish.jpeg" alt="Canned fish" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Canned Fish</h3>
+              <p class="grocery-item__origin">Imported</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:420ms">
+          <a class="grocery-item__link" href="#" aria-label="Sugar">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Sugar.jpeg" alt="Sugar bag" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--local">Local</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Sugar</h3>
+              <p class="grocery-item__origin">Ghana</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:480ms">
+          <a class="grocery-item__link" href="#" aria-label="BF Spread">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/BF_Spread.jpeg" alt="BF spread jar" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">BF Spread</h3>
+              <p class="grocery-item__origin">Imported</p>
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="grocery-item animate-on-scroll" role="listitem" style="--delay:540ms">
+          <a class="grocery-item__link" href="#" aria-label="Lotus Biscuits">
+            <div class="grocery-item__image-wrap">
+              <img class="grocery-item__img" src="Webphotos/Lotus.jpeg" alt="Lotus biscuits pack" loading="lazy" />
+              <span class="grocery-item__badge grocery-item__badge--prime">★ Prime</span>
+            </div>
+            <figcaption class="grocery-item__caption">
+              <h3 class="grocery-item__name">Lotus Biscuits</h3>
+              <p class="grocery-item__origin">Belgium</p>
+            </figcaption>
+          </a>
+        </figure>
+
+      </div><!-- /groceries-grid -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       5b. TRENDING PRODUCTS
+  ═══════════════════════════════════════════ -->
+  <section class="trending" id="trending" aria-labelledby="trending-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title" id="trending-heading">Trending Right Now</h2>
+        <p class="section-subtitle">What Kumasi is buying this week — updated daily</p>
+      </div>
+
+      <div class="trending-track" role="list">
+
+        <article class="trending-card animate-on-scroll" role="listitem" style="--delay:0ms">
+          <span class="trending-card__rank">#1</span>
+          <div class="trending-card__img-wrap">
+            <img src="Webphotos/Milo.jpeg" alt="Milo Chocolate Drink" loading="lazy" />
+            <span class="trending-card__prime" aria-label="Prime product">★ Prime</span>
+          </div>
+          <div class="trending-card__body">
+            <h3 class="trending-card__name">Milo Chocolate Drink</h3>
+            <p class="trending-card__trend">↑ 38% this week</p>
+            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+          </div>
+        </article>
+
+        <article class="trending-card animate-on-scroll" role="listitem" style="--delay:80ms">
+          <span class="trending-card__rank">#2</span>
+          <div class="trending-card__img-wrap">
+            <img src="Webphotos/Peacock_Rice.webp" alt="Peacock Fragrant Rice" loading="lazy" />
+            <span class="trending-card__prime" aria-label="Prime product">★ Prime</span>
+          </div>
+          <div class="trending-card__body">
+            <h3 class="trending-card__name">Peacock Fragrant Rice</h3>
+            <p class="trending-card__trend">↑ 24% this week</p>
+            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+          </div>
+        </article>
+
+        <article class="trending-card animate-on-scroll" role="listitem" style="--delay:160ms">
+          <span class="trending-card__rank">#3</span>
+          <div class="trending-card__img-wrap">
+            <img src="Webphotos/Baileys.webp" alt="Baileys Irish Cream" loading="lazy" />
+            <span class="trending-card__prime" aria-label="Prime product">★ Prime</span>
+          </div>
+          <div class="trending-card__body">
+            <h3 class="trending-card__name">Baileys Irish Cream</h3>
+            <p class="trending-card__trend">↑ 21% this week</p>
+            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+          </div>
+        </article>
+
+        <article class="trending-card animate-on-scroll" role="listitem" style="--delay:240ms">
+          <span class="trending-card__rank">#4</span>
+          <div class="trending-card__img-wrap">
+            <img src="Webphotos/JackDaniel_Coke.avif" alt="Jack Daniel's &amp; Coke" loading="lazy" />
+            <span class="trending-card__prime" aria-label="Prime product">★ Prime</span>
+          </div>
+          <div class="trending-card__body">
+            <h3 class="trending-card__name">Jack Daniel's &amp; Coke</h3>
+            <p class="trending-card__trend">↑ 19% this week</p>
+            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+          </div>
+        </article>
+
+        <article class="trending-card animate-on-scroll" role="listitem" style="--delay:320ms">
+          <span class="trending-card__rank">#5</span>
+          <div class="trending-card__img-wrap">
+            <img src="Webphotos/Heinz.jpeg" alt="Heinz Baked Beans" loading="lazy" />
+            <span class="trending-card__prime" aria-label="Prime product">★ Prime</span>
+          </div>
+          <div class="trending-card__body">
+            <h3 class="trending-card__name">Heinz Baked Beans</h3>
+            <p class="trending-card__trend">↑ 15% this week</p>
+            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+          </div>
+        </article>
+
+        <article class="trending-card animate-on-scroll" role="listitem" style="--delay:400ms">
+          <span class="trending-card__rank">#6</span>
+          <div class="trending-card__img-wrap">
+            <img src="Webphotos/Biscoff.webp" alt="Biscoff Biscuits" loading="lazy" />
+            <span class="trending-card__prime" aria-label="Prime product">★ Prime</span>
+          </div>
+          <div class="trending-card__body">
+            <h3 class="trending-card__name">Biscoff Biscuits</h3>
+            <p class="trending-card__trend">↑ 12% this week</p>
+            <a class="btn btn--primary btn--sm" href="tel:+233249878467">Order Now</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       6. CONTACT
+  ═══════════════════════════════════════════ -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+
+      <div class="contact__inner">
+
+        <!-- Info column -->
+        <div class="contact__info">
+          <h2 class="section-title" id="contact-heading">Get in Touch</h2>
+          <p>Have a question, bulk order enquiry, or feedback? We'd love to hear from you.</p>
+
+          <address class="contact__address" aria-label="Contact details for Ansurogya Supermarket">
+
+            <div class="contact__address-item">
+              <div class="contact__addr-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45a2 2 0 0 1 1.95-2.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__addr-label">Phone</span>
+                <div class="contact__addr-value">
+                  <a href="tel:+233249878467">+233 24 987 8467</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__address-item">
+              <div class="contact__addr-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__addr-label">Email</span>
+                <div class="contact__addr-value">
+                  <a href="mailto:hello@ansurogya.com">hello@ansurogya.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__address-item">
+              <div class="contact__addr-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__addr-label">Opening Hours</span>
+                <div class="contact__addr-value">
+                  Monday – Saturday: 7:00am – 9:00pm<br>
+                  Sunday: 8:00am – 6:00pm
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__address-item">
+              <div class="contact__addr-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <span class="contact__addr-label">Address</span>
+                <div class="contact__addr-value">
+                  Near Central Command,<br>
+                  Kumasi, Ashanti Region,<br>
+                  Ghana
+                </div>
+              </div>
+            </div>
+
+          </address>
+        </div><!-- /contact__info -->
+
+        <!-- Form column -->
+        <form class="contact__form" id="contact-form" novalidate aria-label="Send a message to Ansurogya Supermarket">
+
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Full Name</label>
+            <input class="form-input"
+                   type="text"
+                   id="contact-name"
+                   name="name"
+                   placeholder="Kofi Mensah"
+                   required
+                   autocomplete="name"
+                   aria-required="true"
+                   aria-describedby="name-error" />
+            <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email Address</label>
+            <input class="form-input"
+                   type="email"
+                   id="contact-email"
+                   name="email"
+                   placeholder="kofi@example.com"
+                   required
+                   autocomplete="email"
+                   aria-required="true"
+                   aria-describedby="email-error" />
+            <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-phone">Phone (optional)</label>
+            <input class="form-input"
+                   type="tel"
+                   id="contact-phone"
+                   name="phone"
+                   placeholder="+233 50 000 0000"
+                   autocomplete="tel" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea class="form-input form-textarea"
+                      id="contact-message"
+                      name="message"
+                      rows="5"
+                      placeholder="How can we help you today?"
+                      required
+                      aria-required="true"
+                      aria-describedby="message-error"></textarea>
+            <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
+          </div>
+
+          <button class="btn btn--primary btn--full" type="submit">Send Message</button>
+
+          <p class="form-success" id="form-success" role="status" aria-live="polite" hidden>
+            ✓ Thank you! We'll be in touch within 24 hours.
+          </p>
+
+        </form>
+
+      </div><!-- /contact__inner -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       7. SHOP LOCATION
+  ═══════════════════════════════════════════ -->
+  <section class="location" id="location" aria-labelledby="location-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title" id="location-heading">Find Us</h2>
+        <p class="section-subtitle">Conveniently located in the heart of Kumasi, near Central Command</p>
+      </div>
+
+      <div class="location__inner">
+
+        <div class="location__details">
+
+          <div class="location__detail-card animate-on-scroll" style="--delay:0ms">
+            <div class="location__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3>Our Address</h3>
+              <address>
+                Ansurogya Supermarket,<br>
+                Near Central Command,<br>
+                Kumasi, Ashanti Region,<br>
+                Ghana
+              </address>
+            </div>
+          </div>
+
+          <div class="location__detail-card animate-on-scroll" style="--delay:80ms">
+            <div class="location__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3>Opening Hours</h3>
+              <p>Monday – Saturday: 7:00am – 9:00pm</p>
+              <p>Sunday: 8:00am – 6:00pm</p>
+              <p>Public Holidays: 9:00am – 5:00pm</p>
+            </div>
+          </div>
+
+          <div class="location__detail-card animate-on-scroll" style="--delay:160ms">
+            <div class="location__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45a2 2 0 0 1 1.95-2.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Call Us</h3>
+              <p><a href="tel:+233249878467" style="color:var(--color-primary);font-weight:600;">+233 24 987 8467</a></p>
+              <p>WhatsApp: <a href="https://wa.me/233249878467" style="color:var(--color-primary);font-weight:600;">+233 24 987 8467</a></p>
+            </div>
+          </div>
+
+        </div><!-- /location__details -->
+
+        <div class="location__map-wrap">
+          <iframe
+            class="location__map"
+            title="Ansurogya Supermarket location — near Central Command, Kumasi, Ghana"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.7055!2d-1.6260!3d6.6885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f5e64bffb7%3A0xbf7c8d43a33ac2c6!2sCentral%20Command%2C%20Kumasi!5e0!3m2!1sen!2sgh!4v1699900000000!5m2!1sen!2sgh"
+            width="100%"
+            height="440"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Map showing Ansurogya Supermarket location near Central Command, Kumasi">
+          </iframe>
+        </div>
+
+      </div><!-- /location__inner -->
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       8. FOREIGN & LOCAL PRODUCTS
+  ═══════════════════════════════════════════ -->
+  <section class="products-showcase" id="products" aria-labelledby="products-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title" id="products-heading">Global Meets Local</h2>
+        <p class="section-subtitle">The best of the world alongside Ghana's finest — all under one roof</p>
+      </div>
+
+      <div class="products-tabs" role="tablist" aria-label="Filter products by origin">
+        <button class="tab-btn tab-btn--active" role="tab" aria-selected="true" data-filter="all" id="tab-all" aria-controls="products-scroll">All Products</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-filter="local" id="tab-local" aria-controls="products-scroll">🇬🇭 Local</button>
+        <button class="tab-btn" role="tab" aria-selected="false" data-filter="imported" id="tab-imported" aria-controls="products-scroll">🌍 Imported</button>
+      </div>
+
+      <div class="products-scroll-wrap" role="region" aria-label="Product cards — scroll horizontally to see more">
+        <div class="products-scroll" id="products-scroll" aria-live="polite">
+
+          <article class="product-card" data-origin="local" role="article">
+            <div class="product-card__img-wrap">
+              <img class="product-card__img"
+                   src="https://images.unsplash.com/photo-1567892320791-7e2ad4f5dc94?w=500&q=80&auto=format&fit=crop"
+                   alt="Roasted groundnuts in a bowl"
+                   loading="lazy" />
+              <span class="product-card__origin-badge product-card__origin-badge--local">Local</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Roasted Groundnuts</h3>
+              <p class="product-card__origin">Northern Region, Ghana</p>
+              <p class="product-card__price">GH₵ 20.00</p>
+              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Roasted Groundnuts to cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-origin="local" role="article">
+            <div class="product-card__img-wrap">
+              <img class="product-card__img"
+                   src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=500&q=80&auto=format&fit=crop"
+                   alt="Fresh yam tubers"
+                   loading="lazy" />
+              <span class="product-card__origin-badge product-card__origin-badge--local">Local</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Fresh Yam</h3>
+              <p class="product-card__origin">Brong-Ahafo, Ghana</p>
+              <p class="product-card__price">GH₵ 35.00</p>
+              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Fresh Yam to cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-origin="local" role="article">
+            <div class="product-card__img-wrap">
+              <img class="product-card__img"
+                   src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=500&q=80&auto=format&fit=crop"
+                   alt="Bunch of ripe yellow plantain"
+                   loading="lazy" />
+              <span class="product-card__origin-badge product-card__origin-badge--local">Local</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Yellow Plantain</h3>
+              <p class="product-card__origin">Ashanti Region, Ghana</p>
+              <p class="product-card__price">GH₵ 8.00</p>
+              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Yellow Plantain to cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-origin="local" role="article">
+            <div class="product-card__img-wrap">
+              <img class="product-card__img"
+                   src="Webphotos/Cold_Pressed_oil.webp"
+                   alt="Cold pressed oil bottle"
+                   loading="lazy" />
+              <span class="product-card__origin-badge product-card__origin-badge--local">Local</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Cold Pressed Oil (1L)</h3>
+              <p class="product-card__origin">Western Region, Ghana</p>
+              <p class="product-card__price">GH₵ 48.00</p>
+              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Cold Pressed Oil to cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-origin="imported" role="article">
+            <div class="product-card__img-wrap">
+              <img class="product-card__img"
+                   src="Webphotos/Biscoff.webp"
+                   alt="Lotus Biscoff cookies pack"
+                   loading="lazy" />
+              <span class="product-card__origin-badge product-card__origin-badge--imported">Imported</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Lotus Biscoff Cookies</h3>
+              <p class="product-card__origin">Belgium</p>
+              <p class="product-card__price">GH₵ 58.00</p>
+              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Lotus Biscoff to cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-origin="imported" role="article">
+            <div class="product-card__img-wrap">
+              <img class="product-card__img"
+                   src="Webphotos/sunflower_oil.avif"
+                   alt="Sunflower oil bottle"
+                   loading="lazy" />
+              <span class="product-card__origin-badge product-card__origin-badge--imported">Imported</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Sunflower Oil (1L)</h3>
+              <p class="product-card__origin">EU</p>
+              <p class="product-card__price">GH₵ 72.00</p>
+              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Sunflower Oil to cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-origin="imported" role="article">
+            <div class="product-card__img-wrap">
+              <img class="product-card__img"
+                   src="Webphotos/Kopparberg_Non_alcoholic.avif"
+                   alt="Kopparberg non-alcoholic drink bottle"
+                   loading="lazy" />
+              <span class="product-card__origin-badge product-card__origin-badge--imported">Imported</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Kopparberg Non-Alcoholic</h3>
+              <p class="product-card__origin">Sweden</p>
+              <p class="product-card__price">GH₵ 68.00</p>
+              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add Kopparberg to cart">Add to Cart</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-origin="imported" role="article">
+            <div class="product-card__img-wrap">
+              <img class="product-card__img"
+                   src="Webphotos/J2O_Orange_Passion_Fruit.jpg"
+                   alt="J2O Orange and Passion Fruit bottle"
+                   loading="lazy" />
+              <span class="product-card__origin-badge product-card__origin-badge--imported">Imported</span>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">J2O Orange &amp; Passion Fruit</h3>
+              <p class="product-card__origin">United Kingdom</p>
+              <p class="product-card__price">GH₵ 52.00</p>
+              <button class="btn btn--sm btn--primary product-card__add" aria-label="Add J2O to cart">Add to Cart</button>
+            </div>
+          </article>
+
+        </div><!-- /products-scroll -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       9. LAPTOPS
+  ═══════════════════════════════════════════ -->
+  <section class="laptops" id="laptops" aria-labelledby="laptops-heading">
+    <div class="container">
+
+      <div class="section-header">
+        <h2 class="section-title" id="laptops-heading">Laptops &amp; Electronics</h2>
+        <p class="section-subtitle">Quality refurbished and new business laptops — available in-store in Kumasi</p>
+      </div>
+
+      <div class="laptops-grid">
+
+        <!-- Dell Latitude 7320 Touch -->
+        <article class="laptop-card animate-on-scroll" style="--delay:0ms">
+          <div class="laptop-card__img-wrap">
+            <img class="laptop-card__img"
+                 src="Webphotos/Laptop_Dell.jpg"
+                 alt="Dell Latitude 7320 Touch laptop"
+                 loading="lazy" />
+            <span class="laptop-card__badge">In Stock</span>
+          </div>
+          <div class="laptop-card__body">
+            <h3 class="laptop-card__name">Dell Latitude 7320 Touch</h3>
+            <p class="laptop-card__desc">Premium business ultrabook with Full HD touchscreen. 13.3" compact design built for professionals on the go — fast, secure, and reliable.</p>
+            <ul class="laptop-card__specs" role="list">
+              <li class="laptop-card__spec">13.3" FHD Touch (1920 × 1080) + Webcam</li>
+              <li class="laptop-card__spec">Intel Core i5-1145G7 Quad, 2.60 GHz</li>
+              <li class="laptop-card__spec">16 GB RAM / 512 GB SSD</li>
+              <li class="laptop-card__spec">Intel Integrated Graphics</li>
+              <li class="laptop-card__spec">UK Backlit Keyboard</li>
+              <li class="laptop-card__spec">64-bit Windows 11 Pro</li>
+            </ul>
+            <p class="laptop-card__price">GH₵ 6,000</p>
+            <div class="laptop-card__actions">
+              <a class="btn btn--primary" href="tel:+233249878467" aria-label="Call to enquire about Dell Latitude 7320 Touch">Call to Order</a>
+              <a class="btn btn--outline" href="https://wa.me/233249878467?text=Hi%2C%20I%27m%20interested%20in%20the%20Dell%20Latitude%207320%20Touch%20laptop" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp enquiry for Dell Latitude 7320 Touch">WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Business Laptop -->
+        <article class="laptop-card animate-on-scroll" style="--delay:150ms">
+          <div class="laptop-card__img-wrap">
+            <img class="laptop-card__img"
+                 src="Webphotos/Laptop_1.jpg"
+                 alt="Business laptop"
+                 loading="lazy" />
+            <span class="laptop-card__badge laptop-card__badge--gold">Best Value</span>
+          </div>
+          <div class="laptop-card__body">
+            <h3 class="laptop-card__name">Business Laptop</h3>
+            <p class="laptop-card__desc">Reliable everyday laptop for work, study and browsing. Fast, lightweight and ready to use straight out of the box.</p>
+            <ul class="laptop-card__specs" role="list">
+              <li class="laptop-card__spec">Full HD display</li>
+              <li class="laptop-card__spec">Intel Core i5 processor</li>
+              <li class="laptop-card__spec">8GB RAM / 512GB SSD</li>
+              <li class="laptop-card__spec">Windows 11 Home</li>
+              <li class="laptop-card__spec">6-month warranty included</li>
+            </ul>
+            <p class="laptop-card__price">GH₵ 6,500</p>
+            <div class="laptop-card__actions">
+              <a class="btn btn--primary" href="tel:+233249878467" aria-label="Call to enquire about Business Laptop">Call to Order</a>
+              <a class="btn btn--outline" href="https://wa.me/233249878467?text=Hi%2C%20I%27m%20interested%20in%20the%20Business%20Laptop" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp enquiry for Business Laptop">WhatsApp</a>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /laptops-grid -->
+
+      <p class="laptops__note animate-on-scroll">
+        All laptops are tested and certified before sale. Visit our store near Central Command, Kumasi, or call
+        <a href="tel:+233249878467">+233 24 987 8467</a> to check availability and arrange delivery.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       10. MOMO PAYMENT
+  ═══════════════════════════════════════════ -->
+  <section class="momo" id="momo" aria-labelledby="momo-heading">
+    <div class="container">
+      <div class="momo__inner">
+
+        <div class="momo__text">
+          <div class="momo__logo-circle" aria-hidden="true">
+            <span>MoMo</span>
+          </div>
+          <h2 class="section-title" id="momo-heading">Pay with MTN MoMo</h2>
+          <p class="momo__desc">
+            Checkout securely using MTN Mobile Money. Fast, safe, and available 24/7
+            across Ghana — no bank card needed, just your phone number and PIN.
+          </p>
+          <div class="momo__number-box" aria-label="MoMo merchant number">
+            <span class="momo__number-label">Send payment to</span>
+            <span class="momo__number">0552 681 380</span>
+          </div>
+          <ul class="momo__features" role="list">
+            <li>Instant payment confirmation</li>
+            <li>Available on all MTN numbers nationwide</li>
+            <li>Protected by MTN MoMo security protocols</li>
+            <li>Also accept Telecel Cash &amp; AirtelTigo Money</li>
+          </ul>
+          <div class="momo__actions">
+            <a class="btn btn--primary btn--lg momo__btn"
+               href="tel:+233552681380"
+               aria-label="Call or pay via MoMo number 0552 681 380">
+              Call MoMo: 0552 681 380
+            </a>
+            <a class="btn btn--ghost btn--lg"
+               href="tel:*170#"
+               aria-label="Dial star 170 hash to open MTN MoMo on your phone">
+              Dial *170#
+            </a>
+          </div>
+        </div><!-- /momo__text -->
+
+        <div class="momo__illustration" aria-hidden="true">
+          <div class="momo__phone">
+            <div class="momo__phone-notch"></div>
+            <div class="momo__phone-screen">
+              <div class="momo__phone-logo">MoMo</div>
+              <div class="momo__phone-text">
+                <h4>Ansurogya Market</h4>
+                <p>Secure payment via<br>MTN MoMo</p>
+              </div>
+              <div class="momo__phone-btn">Confirm &amp; Pay</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo" aria-label="Site footer">
+    <div class="container footer__inner">
+
+      <!-- Brand -->
+      <div class="footer__brand">
+        <a class="footer__logo" href="#hero" aria-label="Back to top — Ansurogya Supermarket">
+          <span style="font-size:1.5rem;" aria-hidden="true">🌿</span>
+          <span class="footer__logo-text">Ansurogya</span>
+        </a>
+        <p class="footer__tagline">
+          Premium local and imported groceries, click &amp; collect, and MoMo payments.
+          Serving Kumasi and the Ashanti Region with pride.
+        </p>
+        <nav aria-label="Social media links">
+          <ul class="footer__social" role="list">
+            <li>
+              <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Ansurogya Supermarket on Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Ansurogya Supermarket on Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Ansurogya Supermarket on X (Twitter)">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/233249878467" target="_blank" rel="noopener noreferrer" aria-label="Chat with Ansurogya Supermarket on WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Quick Links -->
+      <nav class="footer__nav" aria-label="Quick links">
+        <h3 class="footer__nav-heading">Quick Links</h3>
+        <ul role="list">
+          <li><a href="#shop">Shop Categories</a></li>
+          <li><a href="#click-collect">Click &amp; Collect</a></li>
+          <li><a href="#pricing">Membership Plans</a></li>
+          <li><a href="#groceries">Fresh Arrivals</a></li>
+          <li><a href="#products">Local &amp; Imported</a></li>
+          <li><a href="#momo">MoMo Payment</a></li>
+        </ul>
+      </nav>
+
+      <!-- Contact Info -->
+      <nav class="footer__nav" aria-label="Contact information">
+        <h3 class="footer__nav-heading">Contact Us</h3>
+        <ul role="list">
+          <li><a href="#location">Find Our Store</a></li>
+          <li><a href="tel:+233249878467">+233 24 987 8467</a></li>
+          <li><a href="mailto:hello@ansurogya.com">hello@ansurogya.com</a></li>
+          <li><a href="https://wa.me/233249878467" target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
+          <li><a href="#contact">Send a Message</a></li>
+        </ul>
+      </nav>
+
+    </div><!-- /footer__inner -->
+
+    <div class="footer__bottom">
+      <p class="container">&copy; <span id="footer-year"></span> Ansurogya Supermarket. All rights reserved. | Near Central Command, Kumasi, Ghana.</p>
+      <p class="container">Designed with care in Kumasi 🇬🇭</p>
+    </div>
+
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       10. SIGN UP
+  ═══════════════════════════════════════════ -->
+  <section class="signup" id="signup" aria-labelledby="signup-heading">
+    <div class="container">
+      <div class="signup__inner">
+
+        <!-- Left: Benefits copy -->
+        <div class="signup__copy animate-on-scroll">
+          <div class="signup__gold-rule" aria-hidden="true"></div>
+          <h2 class="section-title" id="signup-heading">Join the Ansurogya<br>Members Club</h2>
+          <p>
+            Create your free account and unlock exclusive member discounts,
+            early access to weekly deals, and faster checkout every time you shop.
+          </p>
+          <ul class="signup__perks" role="list">
+            <li class="signup__perk">Exclusive member-only weekly deals</li>
+            <li class="signup__perk">Save your shopping lists &amp; reorder easily</li>
+            <li class="signup__perk">Earn loyalty points on every purchase</li>
+            <li class="signup__perk">Priority Click &amp; Collect booking slots</li>
+          </ul>
+        </div>
+
+        <!-- Right: Registration form card -->
+        <div class="signup__form-card animate-on-scroll" style="--delay:120ms">
+
+          <h3 class="signup__form-title">Create Your Account</h3>
+          <p class="signup__form-subtitle">Free forever — takes less than a minute.</p>
+
+          <form class="signup__form" id="signup-form" novalidate aria-label="Account registration form">
+
+            <div class="form-group">
+              <label class="form-label" for="signup-username">Username</label>
+              <input class="form-input"
+                     type="text"
+                     id="signup-username"
+                     name="username"
+                     placeholder="e.g. kwame_ama"
+                     autocomplete="username"
+                     aria-required="true"
+                     aria-describedby="signup-username-error" />
+              <p class="form-error" id="signup-username-error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="signup-password">Password</label>
+              <input class="form-input"
+                     type="password"
+                     id="signup-password"
+                     name="password"
+                     placeholder="At least 8 characters"
+                     autocomplete="new-password"
+                     aria-required="true"
+                     aria-describedby="signup-password-error" />
+              <p class="form-error" id="signup-password-error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="signup-confirm">Confirm Password</label>
+              <input class="form-input"
+                     type="password"
+                     id="signup-confirm"
+                     name="confirm"
+                     placeholder="Repeat your password"
+                     autocomplete="new-password"
+                     aria-required="true"
+                     aria-describedby="signup-confirm-error" />
+              <p class="form-error" id="signup-confirm-error" role="alert" aria-live="polite"></p>
+            </div>
+
+            <button class="btn btn--gold btn--lg" type="submit">Create Free Account</button>
+
+            <p class="signup__signin-link">
+              Already have an account? <a href="#contact">Sign in</a>
+            </p>
+
+          </form>
+
+          <p class="signup__success" id="signup-success" hidden role="status" aria-live="polite">
+            Welcome to the Ansurogya Members Club! Your account has been created.
+          </p>
+
+        </div><!-- /signup__form-card -->
+
+      </div><!-- /signup__inner -->
+    </div>
+  </section>
+
+
+  <script src="script.js"></script>
+
+  <!-- ── AI CHAT WIDGET ─────────────────────────── -->
+  <div id="chat-widget" class="chat-widget" role="complementary" aria-label="Chat assistant">
+
+    <!-- Floating toggle button -->
+    <button id="chat-toggle" class="chat-toggle" aria-haspopup="dialog" aria-expanded="false" aria-label="Open chat">
+      <svg class="chat-toggle__icon chat-toggle__icon--open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      <svg class="chat-toggle__icon chat-toggle__icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Chat panel -->
+    <div id="chat-panel" class="chat-panel" role="dialog" aria-modal="true" aria-labelledby="chat-panel-title" hidden>
+      <div class="chat-panel__header">
+        <div class="chat-panel__avatar" aria-hidden="true">A</div>
+        <div class="chat-panel__info">
+          <span id="chat-panel-title" class="chat-panel__name">Ansurogya Assistant</span>
+          <span class="chat-panel__status">Online</span>
+        </div>
+        <button class="chat-panel__close" id="chat-close" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div id="chat-messages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+
+      <div class="chat-quick-btns" id="chat-quick" aria-label="Quick questions"></div>
+
+      <form id="chat-form" class="chat-form" autocomplete="off">
+        <input id="chat-input" class="chat-form__input" type="text" placeholder="Type a message…" aria-label="Chat message" maxlength="200" />
+        <button class="chat-form__send" type="submit" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+  </div><!-- /chat-widget -->
+
+</body>
+</html>
